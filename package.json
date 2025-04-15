@@ -1,0 +1,16 @@
+{
+  "name": "notes-backend",
+  "version": "1.0.0",
+  "description": "Backend for notes app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "amish2g@gmail.com",
+  "license": "MIT"
+}
