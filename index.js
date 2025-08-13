@@ -1,7 +1,9 @@
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
-const mongoose = require('mongoose')
+const Note = require('./models/note')
+
+
 
 app.use(morgan('tiny'))
 app.use(express.json())
@@ -10,26 +12,11 @@ app.use(express.static('dist'))
 
 
 // DO NOT SAVE YOUR PASSWORD TO GITHUB!!
-const password = process.argv[2]
-const url = `mongodb+srv://amish2g:${password}@cluster0.xtbuvch.mongodb.net/noteApp?retryWrites=true&w=majority&appName=Cluster0`
 
-mongoose.set('strictQuery',false)
-mongoose.connect(url)
 
-const noteSchema = new mongoose.Schema({
-  content: String,
-  important: Boolean,
-})
 
-noteSchema.set('toJSON', {
-  transform: (document, returnedObject) => {
-    returnedObject.id = returnedObject._id.toString()
-    delete returnedObject._id
-    delete returnedObject.__v
-  }
-})
 
-const Note = mongoose.model('Note', noteSchema)
+//const Note = mongoose.model('Note', noteSchema)
 
 let notes = [
     {
