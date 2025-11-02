@@ -1,10 +1,19 @@
-GET http://localhost:3001/api/notes 
+GET http://localhost:3001/api/notes/
 
 ###
 POST http://localhost:3001/api/notes
 content-type: application/json
 
 {
-    "content": "Save this note to MongoDB",
+    "content": "Save this note to MongoDB again",
+    "important": "true"
+}
+
+###
+PUT http://localhost:3001/api/notes/689a69bef82a46e44eef4f3e
+content-type: application/json
+
+{
+    "content": "Save this note to MongoDB again",
     "important": "true"
 }
